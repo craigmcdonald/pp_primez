@@ -10,7 +10,7 @@
     # I last thought about PNT a long time ago, so I Googled to find an 
     # acceptable approximatation for the number of numbers required to 
     # return n primes (expressed in pnt()).
-     
+
     def upper_limit(count)
       count < 20 ? count * 4 : pnt(count)
     end
@@ -46,20 +46,19 @@
 
     def primes_from_range(array,count)
       @primes = []
-      array = array.to_a
-      primes(array,count)
+      primes(array.to_a,count)
       @primes
     end
 
     # Again I've made use of recurison, with each pass working on a smaller array of possible primes
-    # until there are none left. In irb this will hit the stack level after about ~8000 primes, which is
-    # way more than we need for this use case (since we are printing to a screen and as such are constrained
-    # by screen real-estate way before the limit of this simplistic way of sieving).
+    # until there are none left. In irb this hit my stack level after about ~8000 primes, which is
+    # fine for this use case (since we are printing to a screen and as such are constrained
+    # by screen real-estate well before the program starts to consume too much resources on a normal laptop.
 
     def primes(array,count)
       @primes << array[0]
       new_array = array.select {|a| a % array[0] != 0 }
-      return unless new_array.any? && (@primes.count <= count)  # do I need to do this?
+      return unless new_array.any? && (@primes.count <= count)
       primes(new_array,count) 
     end
 

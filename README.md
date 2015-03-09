@@ -1,6 +1,6 @@
 # PpPrimez
 
-TODO: Write a gem description
+Prints the multiplication tables for n primes.
 
 ## Installation
 
@@ -20,12 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+bundle exec pp_primez --count 10
+```
 
-## Contributing
+For the test suite:
 
-1. Fork it ( https://github.com/[my-github-username]/pp_primez/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```
+rake test
+```
