@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'pp_primez'
+
+opts = {}
+
+OptionParser.new do |opt|  
+  opt.on("-c","--count") do |count|
+    opts[:count] = count
+  end
+end.parse!
+
+puts PpPrimez::PrimeTable.validate_and_print(ARGV[0])
