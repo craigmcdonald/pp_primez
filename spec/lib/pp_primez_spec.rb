@@ -29,20 +29,8 @@ describe PpPrimez do
         k.extend(PpPrimez::PrimeNumbers)
       end
     end
-    context "responding to its methods" do
-      [:fetch_primes, :upper_limit, :new_count, :primes_from_range, :primes].each do |method|
-
-        it "should respond to #{method}" do
-          expect(@klass).to respond_to(method)
-        end
-      end
-    end
 
     context "returning the correct values" do 
-
-      it "should return a valid upper limit for 2" do 
-        expect(@klass.upper_limit(2)).to eq(8)
-      end
 
       context "testing against list of primes from http://primes.utm.edu/lists/small/1000.txt" do
         before(:all) do
